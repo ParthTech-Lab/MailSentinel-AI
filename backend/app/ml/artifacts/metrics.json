@@ -1,0 +1,73 @@
+{
+  "status": "trained",
+  "version": "1.0.0",
+  "algorithm": "TF-IDF (1-2 ngrams) + Regularized Logistic Regression (Balanced)",
+  "vectorizer": "TfidfVectorizer(max_features=4000, sublinear_tf=True)",
+  "target_classes": [
+    "safe",
+    "spam",
+    "phishing"
+  ],
+  "trained_at": "2026-10-28T18:44:59.576266Z",
+  "dataset": {
+    "name": "MailSentinel Curated Public Benchmark Corpus",
+    "description": "Cross-sectional email security dataset containing verified ham, bulk spam, and credential phishing",
+    "total_samples": 50,
+    "distribution": {
+      "safe": 20,
+      "spam": 15,
+      "phishing": 15
+    },
+    "sources": [
+      "Enron Email Corpus (Clean Business Communications / Ham)",
+      "SpamAssassin Public Corpus (Unsolicited Commercial Bulk Email)",
+      "Nazario Phishing Corpus & Anti-Phishing Working Group (APWG) Real-World Phishing Samples"
+    ]
+  },
+  "metrics": {
+    "accuracy": 0.9231,
+    "macro_precision": 0.9444,
+    "macro_recall": 0.9167,
+    "macro_f1": 0.9221,
+    "weighted_f1": 0.9211,
+    "per_class": {
+      "safe": {
+        "precision": 0.8333,
+        "recall": 1.0,
+        "f1_score": 0.9091,
+        "support": 5
+      },
+      "spam": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1_score": 0.8571,
+        "support": 4
+      },
+      "phishing": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 4
+      }
+    },
+    "confusion_matrix": [
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        1,
+        3
+      ]
+    ],
+    "evaluated_samples": 13
+  },
+  "disclaimer": "Model confidence is an estimated statistical probability based on textual patterns, not a guarantee of email safety or legitimacy."
+}
